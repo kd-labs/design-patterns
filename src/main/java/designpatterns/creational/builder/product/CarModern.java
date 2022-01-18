@@ -68,7 +68,7 @@ public class CarModern {
         return INSTANCE;
     }
 
-    private static class InnerCarBuilder {
+    public static class InnerCarBuilder {
 
         private CarType carType;
         private int seats;
@@ -76,24 +76,38 @@ public class CarModern {
         private Transmission transmission;
         private GPSNavigator gpsNavigator;
 
-        public void setCarType(CarType carType) {
+        public InnerCarBuilder reset() {
+            this.carType = null;
+            this.seats = 0;
+            this.engine = null;
+            this.transmission = null;
+            this.gpsNavigator = null;
+            return this;
+        }
+
+        public InnerCarBuilder setCarType(CarType carType) {
             this.carType = carType;
+            return this;
         }
 
-        public void setSeats(int seats) {
+        public InnerCarBuilder setSeats(int seats) {
             this.seats = seats;
+            return this;
         }
 
-        public void setEngine(Engine engine) {
+        public InnerCarBuilder setEngine(Engine engine) {
             this.engine = engine;
+            return this;
         }
 
-        public void setTransmission(Transmission transmission) {
+        public InnerCarBuilder setTransmission(Transmission transmission) {
             this.transmission = transmission;
+            return this;
         }
 
-        public void setGpsNavigator(GPSNavigator gpsNavigator) {
+        public InnerCarBuilder setGpsNavigator(GPSNavigator gpsNavigator) {
             this.gpsNavigator = gpsNavigator;
+            return this;
         }
 
         public CarModern build() {

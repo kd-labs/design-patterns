@@ -3,8 +3,7 @@ package designpatterns.creational.builder;
 import designpatterns.creational.builder.builder.Builder;
 import designpatterns.creational.builder.impls.CarBuilder;
 import designpatterns.creational.builder.impls.ManualBuilder;
-import designpatterns.creational.builder.product.Car;
-import designpatterns.creational.builder.product.Manual;
+import designpatterns.creational.builder.product.*;
 
 public class Client {
 
@@ -23,6 +22,22 @@ public class Client {
         director.buildSportsCarManual(manualBuilder);
         Manual manual = manualBuilder.getResult();
         System.out.println(manual);
+
+        CarModern newCarModernInstance = CarModern.builder()
+                .setSeats(4)
+                .setEngine(new Engine(4d, 1000d))
+                .setCarType(CarType.CITY_CAR)
+                .setTransmission(Transmission.MANUAL)
+                .setGpsNavigator(new GPSNavigator())
+                .build();
+
+        CarModern build = CarModern.builder()
+                .reset()
+                .setSeats(4)
+                .setEngine(new Engine(3000d, 1000d))
+                .setCarType(CarType.SPORTS_CAR)
+                .setGpsNavigator(new GPSNavigator())
+                .build();
 
     }
 }
