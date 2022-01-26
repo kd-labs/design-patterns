@@ -1,8 +1,7 @@
 package designpatterns.creational.builder;
 
-import designpatterns.creational.builder.builder.Builder;
-import designpatterns.creational.builder.impls.CarBuilder;
-import designpatterns.creational.builder.impls.ManualBuilder;
+import designpatterns.creational.builder.builder.impls.CarBuilder;
+import designpatterns.creational.builder.builder.impls.ManualBuilder;
 import designpatterns.creational.builder.product.*;
 
 public class Client {
@@ -24,6 +23,7 @@ public class Client {
         System.out.println(manual);
 
         CarModern newCarModernInstance = CarModern.builder()
+                .reset()
                 .setSeats(4)
                 .setEngine(new Engine(4d, 1000d))
                 .setCarType(CarType.CITY_CAR)

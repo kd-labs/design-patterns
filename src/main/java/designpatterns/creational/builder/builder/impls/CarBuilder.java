@@ -1,24 +1,24 @@
-package designpatterns.creational.builder.impls;
+package designpatterns.creational.builder.builder.impls;
 
 import designpatterns.creational.builder.builder.Builder;
 import designpatterns.creational.builder.product.*;
 
-public class ManualBuilder implements Builder {
+public class CarBuilder implements Builder {
 
     private CarType type;
     private Engine engine;
+    private int seats;
     private Transmission transmission;
     private GPSNavigator navigator;
-    private int seats;
 
     @Override
     public void setCarType(CarType type) {
-        this.type = type;
+       this.type = type;
     }
 
     @Override
     public void setEngine(Engine engine) {
-        this.engine = engine;
+       this.engine = engine;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ManualBuilder implements Builder {
         this.seats = seats;
     }
 
-    public Manual getResult() {
-        return new Manual(type, seats ,engine, transmission, navigator);
+    public Car getResult() {
+        return new Car(type, seats, engine, transmission, navigator);
     }
 }

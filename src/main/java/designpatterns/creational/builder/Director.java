@@ -1,7 +1,6 @@
 package designpatterns.creational.builder;
 
 import designpatterns.creational.builder.builder.Builder;
-import designpatterns.creational.builder.impls.ManualBuilder;
 import designpatterns.creational.builder.product.CarType;
 import designpatterns.creational.builder.product.Engine;
 import designpatterns.creational.builder.product.GPSNavigator;
